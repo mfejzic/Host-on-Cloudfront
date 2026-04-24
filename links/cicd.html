@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+
+.home-btn {
+    position: absolute;
+    top: 50px;
+    right: 50px; /* Positioned to the left of the More button */
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.home-btn:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px 10px 20px;
+      background-color: #f4f4f4;
+      border-bottom: 3px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    .chart-container {
+      width: 300px;
+      text-align: center;
+      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-container h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+
+
+
+
+<head>
+
+    <a href="../home.html" class="home-btn">Home <i class="fas fa-home"></i></a>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+                    header {
+                background-color: #3498db;
+                color: #fff;
+                text-align: center;
+                padding: 60px;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin: 0;
+            }
+
+            .header-links {
+                margin-top: 10px;
+            }
+
+            .header-links a {
+                text-decoration: none;
+                color: #fff;
+                margin: 0 10px;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            .header-links a:hover {
+                color: #e74c3c;
+            }
+
+            .header-links span {
+                color: #fff;
+            }
+            
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: right;
+            margin-right: 50px;
+            
+        }
+        
+        .resume-container {
+            flex: 1.2;
+            text-align: center;
+            margin-right: 50px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 1300px; /* Default max-height */
+        }
+
+        .description-container {
+            flex: .9;
+            padding: 20px;
+            border: 7px solid #d8971e;
+        
+        }
+
+        .javacode-container {
+            flex: .75;
+            padding: 20px;
+            border: 7px solid #8f1111;
+        }
+    
+        .javagif-container {
+            flex: .84;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+            list-style: disc; /* Add bullet points */
+            padding-left: 20px; /* Adjust the left padding for bullet points */
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .star {
+            color: #FFD700; /* Set the color of the star (you can adjust this) */
+            margin-right: 0px; /* Adjust the margin to control spacing between the star and text */
+            font-size: 28px;
+        }
+        .key-features-list li {
+            margin-left: 40px; /* Adjust the margin to indent the list items */
+        }
+        .icon {
+            width: 30px; /* Adjust the width of the icon */
+            height: auto; /* Maintain the aspect ratio */
+            margin-right: 10px; /* Adjust the margin to control spacing between the icon and text */
+        }
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bulletin {
+            width: 48%; /* Adjust the width of each bulletin to leave some space between them */
+        }
+    </style>
+
+</head>
+
+<body>
+
+  
+
+    <div class="container">
+      <div class="description-container">
+          <h3>  Launch type: EC2  |  Template: Gunicorn/Flask   |  Language: HCL</h3><div class="divider", style="border-top: 4px solid #000;"></div>
+          <div class="features-container">
+            <div class="bulletin">
+              <ul><span class="star">&#9733;</span> Key Features
+                <li>Automated EC2 Deployment</li>
+                <li>CICD Workflow</li>
+                <li>Secure SSH Keys</li>
+              </ul>
+            </div>
+            <div class="bulletin">
+            
+            </div>
+          </div>
+          <p>
+            <ul>
+              <h3><i class="fas fa-info-circle icon"></i> Description</h3>
+              <li>Flask app deployed to AWS EC2 using GitHub Actions for automatic updates on every push.</li>
+              <li>GitHub Actions pulls code, restarts Gunicorn, and ensures the latest version is live — no manual deploys needed.</li>
+              <li>Uses Terraform for provisioning, Python for the app, and SSH keys for secure remote deployment.</li>
+            </ul>
+
+          </p>
+          <div style="text-align: center;">
+              <a href="https://github.com/mfejzic/auto-deploy-app" style="color: #0074a2;">
+                  <h3>View this on Github</h3>
+              </a>
+          </div>
+      </div>
+      <div class="image-container">
+          <a href="https://github.com/mfejzic/auto-deploy-app" target="_blank">
+              <img src="../jpg/cicdcopilot.jpg" alt="Project 1">
+          </a>
+      </div>
+  </div>
+
+  
+
+</html>
